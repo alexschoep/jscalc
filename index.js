@@ -1,15 +1,14 @@
 class Calculator {
 
-  numbers = {
-    N_1: 1, N_2: 2, N_3: 3, N_4: 4, N_5: 5,
-    N_6: 6, N_7: 7, N_8: 8, N_9: 9, N_0: 0,
-  }
-
   constructor() {
     var calcButtons = document.querySelectorAll('.calc-button');
     calcButtons.forEach(b => { b.addEventListener("click", event => this.keyPressed(event)); });
     var moreButton = document.getElementById('MORE');
     moreButton.addEventListener("click", event => this.more());
+    this.numbers = {
+      N_1: 1, N_2: 2, N_3: 3, N_4: 4, N_5: 5,
+      N_6: 6, N_7: 7, N_8: 8, N_9: 9, N_0: 0,
+    }
     this.a = 0;
     this.b = 0;
     this.str = 0;
@@ -18,6 +17,7 @@ class Calculator {
     this.negative = false;
     this.prevKey = undefined;
     this.moreButtons = false;
+
   }
 
   keyPressed(event) {
